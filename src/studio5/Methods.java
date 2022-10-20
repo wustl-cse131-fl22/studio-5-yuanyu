@@ -1,5 +1,7 @@
 package studio5;
 
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
@@ -14,7 +16,7 @@ public class Methods {
 	 * @return the Euclidean distance between (x1,y1) and (x2,y2)
 	 */
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
-		double distance = 0;
+		double distance = Math.sqrt(Math.pow(y2-y1, 2)+Math.pow(x2-x1,2));
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
 		return distance;
@@ -34,19 +36,31 @@ public class Methods {
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
+		
+			Color blue = new Color(0, 109, 219);
+			StdDraw.setPenColor(blue);
+			StdDraw.filledCircle(x, y, 3.0/4.0);
 		
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+		
+			Color red = new Color(146, 0, 0);
+			StdDraw.setPenColor(red);
+			StdDraw.filledCircle(x, y, 1.0/2.0);
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
 		
+			Color yellow = new Color(255, 255, 109);
+			StdDraw.setPenColor(yellow);
+			StdDraw.filledCircle(x, y, 1.0/4.0);
+			
 	}
+		
+		
+	
 
 	/**
 	 * Return a new String which is the original source String with all occurrences
